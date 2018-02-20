@@ -72,6 +72,15 @@ Wow... that was a lot of output. At least it means the data loaded properly. Let
 ```{r, results='show', purl=FALSE}
 head(metadata)
 ```
+> ### Note
+>
+> `read.csv` assumes that fields are delineated by commas, however, in several
+> countries, the comma is used as a decimal separator and the semicolon (;) is
+> used as a field delineator. If you want to read in this type of files in R,
+> you can use the `read.csv2` function. It behaves exactly like `read.csv` but
+> uses different parameters for the decimal and the field separators. If you are
+> working with another format, they can be both specified by the user. Check out
+> the help for `read.csv()` to learn more.
 
 We've just done two very useful things.
 1. We've read our data in to R, so now we can work with it in R
