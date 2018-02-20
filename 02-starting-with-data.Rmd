@@ -4,9 +4,7 @@ author: "Data Carpentry contributors"
 minutes: 25
 layout: topic
 ---
-```{r, echo=FALSE, purl=FALSE, message = FALSE}
-source("setup.R")
-```
+
 
 
 ------------
@@ -150,6 +148,8 @@ objects besides `data.frame`.
 > * How many rows and how many columns are in this object?
 > * How many citrate+ mutants have been recorded in this population?
 >
+
+<!--
 > ```{r, answer=TRUE, results="markup", purl=FALSE}
 >
 > str(metadata)
@@ -158,6 +158,7 @@ objects besides `data.frame`.
 > ## * how many rows: 30,  how many columns: 7
 > ## * how many citrate+ mutants: 9
 > ```
+--->
 
 
 As you can see, many of the columns in our data frame are of a special class called
@@ -167,7 +168,9 @@ therefore require some attention.
 
 
 # Factors
-
+```{r, echo=FALSE, purl=TRUE}
+### Factors
+```
 
 When we did `str(metadata)` we saw that several of the columns consist of
 integers, however, the columns `clade`, `strain`, `cit`, `run`, ... are
@@ -219,25 +222,35 @@ cit <- factor(cit, levels = c("plus", "minus", "unknown"))
 cit # after re-ordering
 ```
 >### Challenge
-
+>
 >The function `table()` tabulates observations and can be used to create bar plots quickly. For instance:
-
-
->Question: How can you recreate this plot but by having "control" being listed last instead of first?
->exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control",
+>
+>* Question: How can you recreate this plot but by having "control" being listed last instead of first?
+>```{r, purl=TRUE}
+> exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control",
                    "treat1", "treat2", "treat3"))
->table(exprmt)
+> table(exprmt)
 >barplot(table(exprmt))
+>```
 
+<!--
+> ```{r, answer=TRUE, results="markup", purl=TRUE}
+>
+>
+> exprmt <- factor(exprmt, levels = c("treat1", "treat2", "treat3", "control"))
+>
+> barplot(table(exprmt))
+> ```
+--->
 
 In R's memory, these factors are represented by integers (1, 2, 3), but are more
-informative than integers because factors are self describing: `"plus"`,
+informative than integers because factors that are self describing: `"plus"`,
 `"minus"` is more descriptive than `1`, `2`. Which one is "plus"?  You wouldn't
 be able to tell just from the integer data. Factors, on the other hand, have
 this information built in. It is particularly helpful when there are many levels
 (like the strains in our example dataset).
 
-# Converting factors
+### Converting factors
 
 If you need to convert a factor to a character vector, you use
 `as.character(x)`.
@@ -277,7 +290,7 @@ you import in R are of the correct type within your data frame. If not, use it
 to your advantage to detect mistakes that might have been introduced during data
 entry (a letter in a column that should only contain numbers for instance).
 <!--
-# Renaming factors
+### Renaming factors
 
 When your data is stored as a factor, you can use the `plot()` function to get a
 quick glance at the number of observations represented by each factor
