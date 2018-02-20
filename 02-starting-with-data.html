@@ -506,16 +506,28 @@ div.tocify {
 </ul></li>
 </ul>
 <p>Note: most of these functions are “generic”, they can be used on other types of objects besides <code>data.frame</code>.</p>
-<div id="challenge" class="section level3">
-<h3>Challenge</h3>
-<p>Based on the given table of functions to asses data structure, can you answer the following questions?</p>
+<blockquote>
+<h3 id="challenge">Challenge</h3>
+<p>Based on the output of <code>str(metadata)</code>, can you answer the following questions?</p>
 <ul>
 <li>What is the class of the object <code>metadata</code>?</li>
 <li>How many rows and how many columns are in this object?</li>
 <li>How many citrate+ mutants have been recorded in this population?</li>
 </ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(metadata)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:  30 obs. of  7 variables:
+##  $ sample     : Factor w/ 30 levels &quot;CZB152&quot;,&quot;CZB154&quot;,..: 7 6 18 19 20 21 22 23 24 25 ...
+##  $ generation : int  0 2000 5000 10000 15000 20000 20000 20000 25000 25000 ...
+##  $ clade      : Factor w/ 7 levels &quot;(C1,C2)&quot;,&quot;C1&quot;,..: NA 7 7 6 6 1 1 1 2 4 ...
+##  $ strain     : Factor w/ 1 level &quot;REL606&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ cit        : Factor w/ 3 levels &quot;minus&quot;,&quot;plus&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ run        : Factor w/ 30 levels &quot;&quot;,&quot;SRR097977&quot;,..: 1 5 22 23 24 25 26 27 28 29 ...
+##  $ genome_size: num  4.62 4.63 4.6 4.59 4.66 4.63 4.62 4.61 4.65 4.59 ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## * class: data frame
+## * how many rows: 30,  how many columns: 7
+## * how many citrate+ mutants: 9</code></pre></div>
+</blockquote>
 <p>As you can see, many of the columns in our data frame are of a special class called <code>factor</code>. Before we learn more about the <code>data.frame</code> class, we are going to talk about factors. They are very useful but not necessarily intuitive, and therefore require some attention.</p>
-</div>
 <div id="factors" class="section level2">
 <h2>Factors</h2>
 <p>Factors are used to represent categorical data. Factors can be ordered or unordered and are an important class for statistical analysis and for plotting.</p>

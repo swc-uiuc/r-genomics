@@ -1,8 +1,8 @@
 ---
-layout: topic
-title: Starting with data
-author: Data Carpentry contributors
+title: "Starting with data"
+author: "Data Carpentry contributors"
 minutes: 25
+layout: topic
 ---
 
 
@@ -139,14 +139,24 @@ functions to get a sense of the content/structure of the data.
 Note: most of these functions are "generic", they can be used on other types of
 objects besides `data.frame`.
 
+> ### Challenge
+>
+> Based on the output of `str(metadata)`, can you answer the following questions?
+>
+> * What is the class of the object `metadata`?
+> * How many rows and how many columns are in this object?
+> * How many citrate+ mutants have been recorded in this population?
+>
+> ```{r, answer=TRUE, results="markup", purl=FALSE}
+>
+> str(metadata)
+>
+> ## * class: data frame
+> ## * how many rows: 30,  how many columns: 7
+> ## * how many citrate+ mutants: 9
+> ```
 
-### Challenge
 
-Based on the given table of functions to asses data structure, can you answer the following questions?
-
-* What is the class of the object `metadata`?
-* How many rows and how many columns are in this object?
-* How many citrate+ mutants have been recorded in this population?
 
 
 As you can see, many of the columns in our data frame are of a special class called
