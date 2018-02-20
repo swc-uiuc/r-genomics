@@ -5,7 +5,7 @@ minutes: 25
 layout: topic
 ---
 
-
+source("setup.R")
 
 ------------
 
@@ -221,6 +221,7 @@ cit # current order
 cit <- factor(cit, levels = c("plus", "minus", "unknown"))
 cit # after re-ordering
 ```
+
 >### Challenge
 >
 >The function `table()` tabulates observations and can be used to create bar plots quickly. For instance:
@@ -230,7 +231,7 @@ cit # after re-ordering
 > exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control",
                    "treat1", "treat2", "treat3"))
 > table(exprmt)
->barplot(table(exprmt))
+> barplot(table(exprmt))
 >```
 
 <!--
@@ -289,7 +290,8 @@ annoyance. Be aware that it exists, learn the rules, and double check that data
 you import in R are of the correct type within your data frame. If not, use it
 to your advantage to detect mistakes that might have been introduced during data
 entry (a letter in a column that should only contain numbers for instance).
-<!--
+
+
 ### Renaming factors
 
 When your data is stored as a factor, you can use the `plot()` function to get a
@@ -306,19 +308,22 @@ In addition to minus and plus, there are about 12 samples for which the
 cit information hasn't been recorded. Additionally, for these individuals,
 there is no label to indicate that the information is missing. Let's rename this
 label to something more meaningful. Before doing that, we're going to pull out
-the data on sex and work with that data, so we're not modifying the working copy
-of the data frame:
+the data on cit mutant status and work with that data, so we're not modifying the working copy
+of the data frame
 
+```{r, results=TRUE, purl=FALSE}
+cit <- metadata$cit
+head(cit)
+levels(cit)
+head(cit)
+```
 
+> ### Challenge
+>
+> * Rename "minus" and "plus" to "negative" and "postive" respectively.
+>
 
-
-
-
-
-
-
-
-
+<!--
 ### Challenge
 
 The function `table()` tabulates observations and can be used to create

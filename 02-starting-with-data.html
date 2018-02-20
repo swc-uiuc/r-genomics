@@ -354,6 +354,7 @@ div.tocify {
 </div>
 
 
+<p>source(“setup.R”)</p>
 <hr />
 <blockquote>
 <h2 id="learning-objectives">Learning Objectives</h2>
@@ -636,39 +637,31 @@ Another method is to use the <code>levels()</code> function. Compare:</p>
 <li>We convert these levels to numeric values using <code>as.numeric(levels(generation))</code></li>
 <li>We then access these numeric values using the underlying integers of the vector <code>generation</code> inside the square brackets</li>
 </ul>
-<p>The automatic conversion of data type is sometimes a blessing, sometimes an annoyance. Be aware that it exists, learn the rules, and double check that data you import in R are of the correct type within your data frame. If not, use it to your advantage to detect mistakes that might have been introduced during data entry (a letter in a column that should only contain numbers for instance). <!--
-### Renaming factors
-
-When your data is stored as a factor, you can use the `plot()` function to get a
-quick glance at the number of observations represented by each factor
-level. Let's look at the number of citrate-using mutants (Cit+) over the course of
-the experiment:
-
-
-```r
-## bar plot of the number of clade in the samples:
-plot(metadata$cit)
-```
-
-<img src="02-starting-with-data_files/figure-html/unnamed-chunk-18-1.png" width="672" />
-
-In addition to minus and plus, there are about 12 samples for which the
-cit information hasn't been recorded. Additionally, for these individuals,
-there is no label to indicate that the information is missing. Let's rename this
-label to something more meaningful. Before doing that, we're going to pull out
-the data on sex and work with that data, so we're not modifying the working copy
-of the data frame:
-
-
-
-
-
-
-
-
-
-
-
+<p>The automatic conversion of data type is sometimes a blessing, sometimes an annoyance. Be aware that it exists, learn the rules, and double check that data you import in R are of the correct type within your data frame. If not, use it to your advantage to detect mistakes that might have been introduced during data entry (a letter in a column that should only contain numbers for instance).</p>
+</div>
+<div id="renaming-factors" class="section level3">
+<h3>Renaming factors</h3>
+<p>When your data is stored as a factor, you can use the <code>plot()</code> function to get a quick glance at the number of observations represented by each factor level. Let’s look at the number of citrate-using mutants (Cit+) over the course of the experiment:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## bar plot of the number of clade in the samples:
+<span class="kw">plot</span>(metadata<span class="op">$</span>cit)</code></pre></div>
+<p><img src="02-starting-with-data_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>In addition to minus and plus, there are about 12 samples for which the cit information hasn’t been recorded. Additionally, for these individuals, there is no label to indicate that the information is missing. Let’s rename this label to something more meaningful. Before doing that, we’re going to pull out the data on cit mutant status and work with that data, so we’re not modifying the working copy of the data frame</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cit &lt;-<span class="st"> </span>metadata<span class="op">$</span>cit
+<span class="kw">head</span>(cit)</code></pre></div>
+<pre><code>## [1] unknown unknown unknown unknown unknown unknown
+## Levels: minus plus unknown</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(cit)</code></pre></div>
+<pre><code>## [1] &quot;minus&quot;   &quot;plus&quot;    &quot;unknown&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(cit)</code></pre></div>
+<pre><code>## [1] unknown unknown unknown unknown unknown unknown
+## Levels: minus plus unknown</code></pre>
+<blockquote>
+<h3 id="challenge-2">Challenge</h3>
+<ul>
+<li>Rename “minus” and “plus” to “negative” and “postive” respectively.</li>
+</ul>
+</blockquote>
+<!--
 ### Challenge
 
 The function `table()` tabulates observations and can be used to create
@@ -703,7 +696,7 @@ barplot(table(exprmt))
 ```
 
 <img src="02-starting-with-data_files/figure-html/correct-order-1.png" width="672" />
----></p>
+--->
 </div>
 </div>
 
