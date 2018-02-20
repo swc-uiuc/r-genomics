@@ -4,6 +4,9 @@ author: "Data Carpentry contributors"
 minutes: 25
 layout: topic
 ---
+```{r, echo=FALSE, purl=FALSE, message = FALSE}
+source("setup.R")
+```
 
 
 ------------
@@ -157,19 +160,20 @@ objects besides `data.frame`.
 > ```
 
 
-
-
 As you can see, many of the columns in our data frame are of a special class called
 `factor`. Before we learn more about the `data.frame` class, we are going to
 talk about factors. They are very useful but not necessarily intuitive, and
 therefore require some attention.
 
 
-## Factors
+# Factors
 
-```{r, echo=FALSE, purl=TRUE}
-### Factors
-```
+
+When we did `str(metadata)` we saw that several of the columns consist of
+integers, however, the columns `clade`, `strain`, `cit`, `run`, ... are
+of a special class called a `factor`. Factors are very useful and are actually
+something that make R particularly well suited to working with data, so we're
+going to spend a little time introducing them.
 
 Factors are used to represent categorical data. Factors can be ordered or
 unordered and are an important class for statistical analysis and for plotting.
@@ -185,7 +189,17 @@ str(metadata)
 ```
 
 We can see the names of the multiple columns. And, we see that
-some say things like `Factor w/ 30 levels`
+some say things like `Factor w/ 3 levels`
+
+You can learn what these level are by using the function `levels()`, 
+```{r, results = TRUE, purl=FALSE}
+levels(metadata$cit)
+```
+and check the number of levels using `nlevels()`:
+
+```{r, results = TRUE, purl=FALSE}
+nlevels(metadata$cit)
+```
 
 When we read in a file, any column that contains text is automatically
 assumed to be a factor. Once created, factors can only contain a pre-defined set values, known as
@@ -193,53 +207,104 @@ assumed to be a factor. Once created, factors can only contain a pre-defined set
 
 For instance, we see that `cit` is a Factor w/ 3 levels, `minus`, `plus` and `unknown`.
 
-<!--
-
-You can check this by using the function `levels()`, and check the
-number of levels using `nlevels()`:
-
-```{r, purl=FALSE, eval=FALSE}
-levels(citrate)
-nlevels(citrate)
-```
-
 Sometimes, the order of the factors does not matter, other times you might want
-to specify the order because it is meaningful (e.g., "low", "medium", "high") or
-it is required by particular type of analysis. Additionally, specifying the
-order of the levels allows to compare levels:
+to specify the order because it is meaningful (e.g., "low", "medium", "high"),
+it improves your visualization, or it is required by a particular type of
+analysis. Here, one way to reorder our levels in the `cit` vector would be:
 
-```{r, purl=FALSE, error=TRUE, eval=FALSE}
-expression <- factor(c("low", "high", "medium", "high", "low", "medium", "high"))
-levels(expression)
-expression <- factor(expression, levels=c("low", "medium", "high"))
-levels(expression)
-min(expression) ## doesn't work
-expression <- factor(expression, levels=c("low", "medium", "high"), ordered=TRUE)
-levels(expression)
-min(expression) ## works!
+```{r, results=TRUE, purl=FALSE}
+cit <-metadata$cit
+cit # current order
+cit <- factor(cit, levels = c("plus", "minus", "unknown"))
+cit # after re-ordering
 ```
+>### Challenge
 
-In R's memory, these factors are represented by numbers (1, 2, 3). They are
-better than using simple integer labels because factors are self describing:
-`"low"`, `"medium"`, and `"high"`" is more descriptive than `1`, `2`, `3`. Which
-is low?  You wouldn't be able to tell with just integer data. Factors have this
-information built in. It is particularly helpful when there are many levels
-(like the species in our example data set).
+>The function `table()` tabulates observations and can be used to create bar plots quickly. For instance:
 
-### Converting factors
 
-If you need to convert a factor to a character vector, simply use
+>Question: How can you recreate this plot but by having "control" being listed last instead of first?
+>exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control",
+                   "treat1", "treat2", "treat3"))
+>table(exprmt)
+>barplot(table(exprmt))
+
+
+In R's memory, these factors are represented by integers (1, 2, 3), but are more
+informative than integers because factors are self describing: `"plus"`,
+`"minus"` is more descriptive than `1`, `2`. Which one is "plus"?  You wouldn't
+be able to tell just from the integer data. Factors, on the other hand, have
+this information built in. It is particularly helpful when there are many levels
+(like the strains in our example dataset).
+
+# Converting factors
+
+If you need to convert a factor to a character vector, you use
 `as.character(x)`.
 
-Converting a factor to a numeric vector is however a little trickier, and you
-have to go via a character vector. Compare:
-
-```{r, purl=TRUE, eval=FALSE}
-f <- factor(c(1, 5, 10, 2))
-as.numeric(f)               ## wrong! and there is no warning...
-as.numeric(as.character(f)) ## works...
-as.numeric(levels(f))[f]    ## The recommended way.
+```{r, results=TRUE,purl=FALSE}
+as.character(cit)
 ```
+Converting factors where the levels appear as numbers (such as concentration
+levels, generations or years) to a numeric vector is a little trickier. 
+
+Lets simulate an error in importing the dataset where generation was misidentified as a factor rather than a integer
+```{r, results =TRUE, purl=TRUE}
+generation <- factor(metadata$generation) 
+```
+
+The `as.numeric()` function returns the index values of the factor, not its levels, so it will 
+result in an entirely new (and unwanted in this case) set of numbers. 
+One method to avoid this is to convert factors to characters and then numbers.  
+Another method is to use the `levels()` function. Compare:
+
+```{r, results =TRUE, purl=TRUE}
+as.numeric(generation)               # Wrong! And there is no warning...
+as.numeric(as.character(generation)) # Works...
+as.numeric(levels(generation))[generation]    # The recommended way.
+```
+
+Notice that in the `levels()` approach, three important steps occur:
+
+* We obtain all the factor levels using `levels(generation)`
+* We convert these levels to numeric values using `as.numeric(levels(generation))`
+* We then access these numeric values using the underlying integers of the
+  vector `generation` inside the square brackets
+
+The automatic conversion of data type is sometimes a blessing, sometimes an
+annoyance. Be aware that it exists, learn the rules, and double check that data
+you import in R are of the correct type within your data frame. If not, use it
+to your advantage to detect mistakes that might have been introduced during data
+entry (a letter in a column that should only contain numbers for instance).
+<!--
+# Renaming factors
+
+When your data is stored as a factor, you can use the `plot()` function to get a
+quick glance at the number of observations represented by each factor
+level. Let's look at the number of citrate-using mutants (Cit+) over the course of
+the experiment:
+
+```{r, purl=TRUE}
+## bar plot of the number of clade in the samples:
+plot(metadata$cit)
+```
+
+In addition to minus and plus, there are about 12 samples for which the
+cit information hasn't been recorded. Additionally, for these individuals,
+there is no label to indicate that the information is missing. Let's rename this
+label to something more meaningful. Before doing that, we're going to pull out
+the data on sex and work with that data, so we're not modifying the working copy
+of the data frame:
+
+
+
+
+
+
+
+
+
+
 
 ### Challenge
 
