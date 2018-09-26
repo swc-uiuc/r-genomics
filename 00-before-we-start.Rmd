@@ -1,8 +1,8 @@
 ---
-layout: topic
-title: Before we start
-author: Data Carpentry contributors
+title: "Before we start"
+author: "Data Carpentry contributors"
 minutes: 15
+layout: topic
 ---
 
 ```{r, echo=FALSE, purl=FALSE}
@@ -33,7 +33,7 @@ Start RStudio -- Let's start by learning about our tool.
 # Before we get started
 
 * Under the `File` menu, click on `New project`, choose `New directory`, then
-  `Empty project`
+  `New project`
 * Enter a name for this new folder, and choose a convenient location for
   it. This will be your **working directory** for the rest of the day
   (e.g., `~/data-carpentry`)
@@ -82,7 +82,7 @@ R is a versatile, open source programming/scripting language that's useful both
 for statistics but also data science. Inspired by the programming language S.
 
 * Open source software under GPL.
-* Superior (if not just comparable) to commercial alternatives. R has over 7,000
+* Superior (if not just comparable) to commercial alternatives. R has over 15,000
   user contributed packages at this time. It's widely used both in academia and
   industry.
 * Available on all platforms.
