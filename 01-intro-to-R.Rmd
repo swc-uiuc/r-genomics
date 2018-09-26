@@ -24,7 +24,7 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 
 ## The R syntax
 
-_Start by showing an example of a script_
+_Start by showing an [example of a script](https://github.com/HPCBio/HPCBio-Toolbox/blob/master/general/Salmon_summarizeOutput.R)_
 
 * Point to the different parts:
   - a function
