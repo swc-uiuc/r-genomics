@@ -151,7 +151,7 @@ The other key feature of R are functions. These are R's built in capabilities. S
 Functions are "canned scripts" that automate something complicated or convenient
 or both.  Many functions are predefined, or become available when using the
 function `library()` (more on that later). A function usually gets one or more
-inputs called *arguments*. Functions often (but not always) return a *value*. A
+inputs called *arguments* that are separated by commas. Functions often (but not always) return a *value*. A
 typical example would be the function `sqrt()`. The input (the argument) must be
 a number, and the return value (in fact, the output) is the square root of that
 number. Executing a function ('running it') is called *calling* the function. An
@@ -168,7 +168,7 @@ and it also does not need to be a single item: it can be a set of things, or
 even a data set. We'll see that when we read data files in to R.
 
 Arguments can be anything, not only numbers or filenames, but also other
-objects. Exactly what each argument means differs per function, and must be
+objects or even calls to other functions. Exactly what each argument means differs per function, and must be
 looked up in the documentation (see below). If an argument alters the way the
 function operates, such as whether to ignore 'bad values', such an argument is
 sometimes called an *option*.
@@ -207,6 +207,15 @@ type `digits=2` or however many we want.
 ```{r, results='show'}
 round(3.14159, digits=2)
 ```
+
+
+What if we forget to separate the arguments with a comma?
+
+```{r, results='show', error = TRUE}
+round(3.14159 digits=2)
+```
+
+Without the comma, R does not recognize it as an argument and throws an error.
 
 If you provide the arguments in the exact same order as they are defined you don't have to name them:
 
@@ -350,9 +359,9 @@ str(species)
 You can add elements to your vector simply by using the `c()` function:
 
 ```{r, purl=FALSE}
-lengths <- c(glengths, 90) # adding at the end
-lengths <- c(30, glengths) # adding at the beginning
-lengths
+glengths2 <- c(glengths, 90) # adding at the end
+glengths2 <- c(30, glengths2) # adding at the beginning
+glengths2
 ```
 
 What happens here is that we take the original vector `glengths`, and we are
@@ -372,7 +381,7 @@ We just saw 2 of the 6 **data types** that R uses: `"character"` and
 
 Vectors are one of the many **data structures** that R uses. Other important
 ones are lists (`list`), matrices (`matrix`), data frames (`data.frame`) and
-factors (`factor`).
+factors (`factor`). We will see examples of these later...
 
 
 ## Seeking help
