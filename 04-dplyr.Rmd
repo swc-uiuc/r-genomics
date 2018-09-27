@@ -1,7 +1,7 @@
 ---
+title: "Aggregating and analyzing data with dplyr"
+author: "Data Carpentry contributors"
 layout: topic
-title: Aggregating and analyzing data with dplyr
-author: Data Carpentry contributors
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message = FALSE}
@@ -233,6 +233,6 @@ metadata %>%
 
 
 
-[Handy dplyr cheatsheet](http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+[Handy dplyr cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
 
 *Much of this lesson was copied or adapted from Jeff Hollister's [materials](http://usepa.github.io/introR/2015/01/14/03-Clean/)*
