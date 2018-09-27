@@ -24,7 +24,9 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 
 
@@ -78,6 +80,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -314,7 +319,10 @@ div.tocify {
 <p>
 </p>
 <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
-<img src="./img/DC-logo-vision.png" />
+<div class="figure">
+<img src="img/DC-logo-vision.png" />
+
+</div>
 </div>
 <p>
 </p>
@@ -329,6 +337,7 @@ div.tocify {
 <li><a href="03-data-frames.html">Data frames</a></li>
 <li><a href="04-dplyr.html">The dplyr package</a></li>
 <li><a href="05-data-visualization.html">Data visualization</a></li>
+<li><a href="06-extras.html">Extras</a></li>
 </ol>
 </div>
 <div id="requirements" class="section level2">
@@ -336,12 +345,12 @@ div.tocify {
 <p>Data Carpentry’s teaching is hands-on, so participants are encouraged to use their own computers to ensure the proper setup of tools for an efficient workflow. <em>These lessons assume no prior knowledge of the skills or tools</em>, but working through this lesson requires working copies of the software described below. To most effectively use these materials, please make sure to download the data and install everything <em>before</em> working through this lesson.</p>
 <div id="data" class="section level3">
 <h3>Data</h3>
-<p>Data files for the lesson are available and can be downloaded manually here:</p>
-<p>However, we will download them directly from R during the lessons when we need them.</p>
+<p>Data for the lesson is available <a href="https://raw.githubusercontent.com/datacarpentry/R-genomics/gh-pages/data/Ecoli_metadata.csv">here</a>.</p>
+<p>We will download this file directly from R during the lessons when we need it.</p>
 </div>
 <div id="setup-instructions" class="section level3">
 <h3>Setup instructions</h3>
-<p><strong>R</strong> and <strong>RStudio</strong> are separate downloads and installations. R is the underlying statistical computing environment, but using R alone is no fun. RStudio is a graphical integrated development environment (IDE) that makes using R much easier and more interactive. You need to install R before you install RStudio. After installing both programs, you will need to install the <strong><code>tidyverse</code></strong> package from within RStudio. Follow the instructions below for your operating system, and then follow the instructions to install <strong><code>tidyverse</code></strong> and <strong><code>RSQLite</code></strong>.</p>
+<p><strong>R</strong> and <strong>RStudio</strong> are separate downloads and installations. R is the underlying statistical computing environment, but using R alone is no fun. RStudio is a graphical integrated development environment (IDE) that makes using R much easier and more interactive. You need to install R before you install RStudio. After installing both programs, you will need to install the <strong><code>tidyverse</code></strong> package from within RStudio. In the sections below are the instructions for installing R and R Studio on your operating system, as well as instructions for then installing <strong><code>tidyverse</code></strong> and <strong><code>RSQLite</code></strong>.</p>
 <div id="windows" class="section level4">
 <h4>Windows</h4>
 <div id="if-you-already-have-r-and-rstudio-installed" class="section level5">
@@ -406,7 +415,7 @@ div.tocify {
 </div>
 <div id="contributors" class="section level2">
 <h2>Contributors</h2>
-<p>The list of contributors to this lesson is available <a href="http://datacarpentry.org/R-ecology-lesson/CITATION">here</a>,</p>
+<p>The list of contributors to this lesson is available <a href="http://datacarpentry.org/R-ecology-lesson/CITATION">here</a>.</p>
 </div>
 
 <hr/>
