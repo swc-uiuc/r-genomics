@@ -88,10 +88,6 @@ seq(20, 4, by = -3)
 >
 > ten_letters[____________]
 > 
-> > ## Solution
-> > ten_letters[seq(2, 10, by = 2)]
-> {: .solution}
-{: .challenge}
 
 
 ## Data frames
@@ -109,17 +105,7 @@ metadata[, 7]    # Entire 7th column
 ```
 
 
-> ## Challenge
-> 
-> The function `nrow()` on a `data.frame` returns the number of rows. For example, try typing nrow(metadata)`.
-> Use `nrow()` and `seq()` to create a new data frame called `meta_by_2` that includes all even numbered rows of `metadata`.
-> 
-> ## Solution
-> > meta_data[seq(2, nrow(metadata), by = 2, ]
-> > 
-> >
-> {: .solution}
-{: .challenge}
+
 
 For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. Sometimes the column number for a particular variable can change if your analysis adds or removes columns. The best practice when working with columns in a data frame is to refer to them by name. This also makes your code easier to read and your intentions clearer.
 
@@ -154,23 +140,19 @@ metadata[4:7, c("strain", "clade")]
 ```
 
 
-<!--
-Still need to address the following learning objectives:
- * Append columns to a data frame.
- * Create subsets of a data frame.
-
-The following headings are just suggestions.
-
->
-
-# Manipulating columns
-
-
-## Mathematical operations
 
 ## Appending new columns
 
+If we want to add a new column to a data.frame, there are a few ways to do it [Note: there is usually more than one way to get the same outcome!], although all use the assignment arrow `<-`.
 
-# Creating subsets
+```{r, eval=FALSE}
+metadata$new1 <- 1
+metadata[,"new2"] <- 2
+metadata <- cbind(metadata, new3 = 3)
+head(metadata)
+```
+
+
+
 
 
