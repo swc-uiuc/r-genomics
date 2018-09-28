@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Data Carpentry contributors" />
+
+
+<title>Extras</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="00-before-we-start.html">Before we start</a>
+</li>
+<li>
+  <a href="01-intro-to-R.html">Intro to R</a>
+</li>
+<li>
+  <a href="02-starting-with-data.html">Starting with data</a>
+</li>
+<li>
+  <a href="03-data-frames.html">Data frames</a>
+</li>
+<li>
+  <a href="04-dplyr.html">The dplyr package</a>
+</li>
+<li>
+  <a href="05-data-visualization.html">Data visualization</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/data-lessons/R-genomics">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Extras</h1>
+<h4 class="author"><em>Data Carpentry contributors</em></h4>
+
+</div>
+
+
+<hr />
+<blockquote>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Describe what a R add-on package is</li>
+<li>Install a package from CRAN</li>
+<li>Install a package from Bioconductor</li>
+<li>Learn how to manage package conflicts</li>
+<li>Use the swirl package for more R practice</li>
+</ul>
+</blockquote>
+<hr />
+<div id="add-on-packages" class="section level1">
+<h1>Add-on packages</h1>
+<div id="cran" class="section level2">
+<h2>CRAN</h2>
+<p>In the last two lessons, we used an add-on package called <code>dplyr</code>. R is open source, so anyone can write their own functions for particular tasks. When you want to make these functions available to other people, you can develop them into a package with extra documentation like help pages for each function and a guide on how to put all the functions together in a typical analysis. If your package meets certain requirements, you can submit it to the Comprehensive R Archive Network (CRAN), who will host it and make it available to anyone in the world. CRAN currently has over <a href="http://cran.mtu.edu/web/packages/index.html">13,000 packages</a>! To get any one of them, use R’s built in install.packages function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;swirl&quot;</span>) ## install a package to help learn R</code></pre></div>
+<p>You might get asked to choose a CRAN mirror – this is basically asking you to choose a site to download the package from. The choice doesn’t matter too much. I’d recommend choosing the RStudio mirror or one that is geographically close. You might also notice that more than one package gets downloaded. <code>install.packages()</code> checks to see if the package depends upon additional packages and downloads them as well.</p>
+</div>
+<div id="bioconductor" class="section level2">
+<h2>Bioconductor</h2>
+<p>Besides CRAN, there are other repositories for R packages. <a href="http://bioconductor.org/">Bioconductor</a> provides packages for analyzing genomic data. They currently have over <a href="http://bioconductor.org/packages/release/BiocViews.html#___Software">1,500 software packages</a> and 900 Annotation packages. To install a package from Bioconductor, you cannot use install.packages with default options. Instead, Bioconductor submitted their own small package to CRAN with a function to download packages from either Bioconductor or CRAN.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;AnnotationDbi&quot;</span>) <span class="co">#this should throw an error</span>
+
+<span class="kw">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>) ## Bioconductor&#39;s CRAN package
+BiocManager<span class="op">::</span><span class="kw">install</span>(<span class="st">&quot;AnnotationDbi&quot;</span>)</code></pre></div>
+</div>
+<div id="package-conflicts" class="section level2">
+<h2>Package conflicts</h2>
+<p>What was that <code>::</code> in the line of code above? It is a way to call the function <code>install</code> that is specifically from the <code>BiocManager</code> package. You can imagine that with 13,000 + 1,500 software packages, the same simple function names get used often. It is also a way to use a function without loading its package first. Remember from the <a href="04-dplyr.html">dplyr lesson</a>, in order to use the functions we had to first load the dplyr package with the <code>library</code> function. <em>Every</em> time you open a new R session, you have to load packages from your library to use the functions unless you use the <code>::</code> designation. The <code>::</code> can also come in handy when you have two packages loaded that share a function name. Try this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(AnnotationDbi)</code></pre></div>
+<p>If you already had the dplyr package loaded this session, then the first line may not produce any output in the console. But the second line should produce a lot of output, much of it similar to this:</p>
+<pre><code>The following object is masked from ‘package:dplyr’:
+
+    select</code></pre>
+<p>“Masked” means that since <code>AnnotationDbi</code> was loaded second, using the function <code>select</code> will typically result in using the one from <code>AnnotationDbi</code> instead of <code>dplyr</code>. Ask for help on <code>select</code> in the following ways:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?select   <span class="co">#R gives both options</span>
+?dplyr<span class="op">::</span>select   <span class="co">#takes you to dplyr&#39;s help page</span>
+?AnnotationDbi<span class="op">::</span>select   <span class="co">#takes you to AnnotationDbi&#39;s help page</span></code></pre></div>
+<p>If the order of loading packages had been reversed, then the <code>select</code> function from <code>dplyr</code> would mask the one from <code>AnnotationDbi</code>. This package confict becomes an issue when you need more and more packages for an analysis. Package maintainers can mitigate conflicts by writing their functions in a way that tells R to check the class of object given to the function and then select the correction function.</p>
+</div>
+</div>
+<div id="more-r-practice" class="section level1">
+<h1>More R practice</h1>
+<p>We have covered many of the basics of R, but because R is a language, you will not become fluent unless you get lots of practice. In addition to this workshop, there are many other ways to learn R. One excellent way is using the <code>swirl</code> package that we installed above. <code>swirl</code> uses self-paced, interactive lessons directly in R to cover many more topics that we have time to cover in this workshop. The only thing you have to remember to use swirl is to load the package with the <code>library</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(swirl)</code></pre></div>
+<p>Just read the output and do what it says. It will wait for you to type in a response and hit enter. It then covers some basics of how it works. There are several different courses and I suggest to start with <code>1: R Programming: The basics of programming in R</code>. Once the course installs, choose <code>1: R Programming</code>, then from the lessons start with <code>1: Basic Building Blocks</code>. Each lesson is interactive, giving you some information or asking a question and then waiting for your response. It checks to make sure your response is correct, and if not, will ask you to try again. These are great to work through on your own, at your own pace.</p>
+</div>
+
+<hr/>
+
+<p><a href="http://datacarpentry.org/">Data Carpentry</a>,
+  2017. <a href="LICENSE.html">License</a>. <a href="CONTRIBUTING.html">Contributing</a>. <br/>
+  Questions?  Feedback?
+  Please <a href="https://github.com/datacarpentry/R-ecology-lesson/issues/new">file
+  an issue on GitHub</a>. <br/> On
+  Twitter: <a href="https://twitter.com/datacarpentry">@datacarpentry</a></p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
