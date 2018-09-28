@@ -14,6 +14,8 @@ navbar:
       href: 04-dplyr.html
     - text: "Data visualization"
       href: 05-data-visualization.html
+    - text: "Extras"
+      href: 06-extras.html
   right:
     - icon: fa-github fa-lg
       href: https://github.com/data-lessons/R-genomics
