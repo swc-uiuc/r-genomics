@@ -13,7 +13,7 @@ layout: topic
 > * Install a package from CRAN
 > * Install a package from Bioconductor
 > * Learn how to manage package conflicts
-> * Use the swirl package for more R practice
+> * Learn about other ways to practice R
 
 
 ------------
@@ -84,5 +84,7 @@ library(swirl)
 ```
 
 Just read the output and do what it says. It will wait for you to type in a response and hit enter. It then covers some basics of how it works. There are several different courses and I suggest to start with `1: R Programming: The basics of programming in R`. Once the course installs, choose `1: R Programming`, then from the lessons start with `1: Basic Building Blocks`. Each lesson is interactive, giving you some information or asking a question and then waiting for your response. It checks to make sure your response is correct, and if not, will ask you to try again. These are great to work through on your own, at your own pace.
+
+Another excellent way to get more R practice is to run through Software Carpentry's [Programming with R](https://swcarpentry.github.io/r-novice-inflammation/) lessons. It's focus is more on general programming, writing functions, for loops, if/else statements, writing packages and writing dynamic reports. 
 
 
