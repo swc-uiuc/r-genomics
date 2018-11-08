@@ -63,7 +63,7 @@ using R much easier and more interactive. You need to install R before you
 install RStudio. After installing both programs, you will need to install the
 **`tidyverse`** package from within RStudio. In the sections below are the instructions
 for installing R and R Studio on your operating system, as well as instructions for 
-then installing **`tidyverse`** and **`RSQLite`**.
+then installing **`tidyverse`**.
 
 #### Windows
 
@@ -141,11 +141,10 @@ then installing **`tidyverse`** and **`RSQLite`**.
 
 #### For everyone
 
-**After installing R and RStudio, you need to install the `tidyverse` and
-`RSQLite` packages.**
+**After installing R and RStudio, you need to install the `tidyverse` packages.**
 
 * After starting RStudio, at the console type:
-  `install.packages(c("tidyverse", "RSQLite"))`
+  `install.packages("tidyverse")`
 
 ## Contributors
 
