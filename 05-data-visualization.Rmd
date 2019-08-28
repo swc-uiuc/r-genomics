@@ -1,8 +1,8 @@
 ---
-layout: topic
-title: Data Visualization
-author: Data Carpentry contributors
+title: "Data Visualization"
+author: "Data Carpentry contributors"
 minutes: 30
+layout: topic
 ---
 
 ```{r, echo=FALSE}
