@@ -135,11 +135,11 @@ ggplot(metadata) +
 
 ## Histogram
 
-To plot a histogram we require another geometric object `geom_bar`, which requires a statistical transformation. Some plot types (such as scatterplots) do not require transformations, each point is plotted at x and y coordinates equal to the original value. Other plots, such as boxplots, histograms, prediction lines etc. need to be transformed, and usually has a default statistic that can be changed via the `stat_bin` argument. 
+To plot a histogram we require another geometric object `geom_histogram`, which requires a statistical transformation. Some plot types (such as scatterplots) do not require transformations, each point is plotted at x and y coordinates equal to the original value. Other plots, such as boxplots, histograms, prediction lines etc. need to be transformed, and usually have a default statistic that can be changed via the `stat` argument. 
 
 ```{r, eval=FALSE}
 ggplot(metadata) +
-  geom_bar(aes(x = genome_size))
+  geom_histogram(aes(x = genome_size))
   
 ```
 
@@ -147,7 +147,7 @@ Try plotting with the default value and compare it to the plot using the binwidt
 
 ```{r, fig.align='center'}
 ggplot(metadata) +
-  geom_bar(aes(x = genome_size), stat = "bin", binwidth=0.05)
+  geom_histogram(aes(x = genome_size), stat = "bin", binwidth=0.05)
   
 ```
 
