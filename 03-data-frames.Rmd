@@ -51,7 +51,7 @@ So, to extract the 2nd element of `ten_letters` we type:
 ten_letters[2]
 ```
 
-We can extract multiple elements at a time by specifying mulitple indices inside the square brackets as a vector. Notice how you can use `:` to make a vector of all integers two numbers. 
+We can extract multiple elements at a time by specifying mulitple indices inside the square brackets as a vector. Notice how you can use `:` to make a vector of all integers between (and including) two numbers. 
 
 ```{r, purl=FALSE, eval=FALSE}
 ten_letters[c(1,7)]
