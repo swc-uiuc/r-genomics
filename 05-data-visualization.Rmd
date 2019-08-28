@@ -49,7 +49,7 @@ plot(genome_size, pch=8, main="Scatter plot of genome sizes")
 ```
 
 ## Histogram
-Another way to visualize the distribution of genome sizes is to use a histogram, we can do this buy using the `hist` function:
+Another way to visualize the distribution of genome sizes is to use a histogram, which we can do using the `hist` function:
 
 ```{r, fig.align='center'}
 hist(genome_size)
