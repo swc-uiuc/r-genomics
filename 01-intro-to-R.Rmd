@@ -66,7 +66,7 @@ doesn't work. Now we're stuck over in the console. The
 `+` sign means that it's still waiting for input, so we
 can't type in a new command. To get out of this press the `Esc` key. This will work whenever you're stuck with that `+` sign.
 
-It's great that R is a glorified caluculator, but obviously
+It's great that R is a glorified calculator, but obviously
 we want to do more interesting things.
 
 To do useful and interesting things, we need to assign _values_ to
@@ -146,7 +146,7 @@ genome_size_mb
 ## Functions
 
 The other key feature of R are functions. These are R's built in capabilities. Some examples of these are mathematical functions, like
-`sqrt` and `round`. You can also get functions from libraries (which we'll talk about in a bit), or even write your own.
+`sqrt` and `round`. You can also get functions from packages you download and install in your library (which we'll talk about in a bit), or even write your own.
 
 Functions are "canned scripts" that automate something complicated or convenient
 or both.  Many functions are predefined, or become available when using the
@@ -229,8 +229,11 @@ it makes your code difficult to read. (It's however OK to not include the names
 of the arguments for basic functions like `mean`, `min`, etc...)
 
 Another advantage of naming arguments, is that the order doesn't matter.
-This is useful when there start to be more arguments.
+This is useful when there start to be more arguments. Our example above could be written:
 
+```{r, results='show'}
+round(digits = 2, x = 3.14159)
+```
 
 ### Exercise
 
@@ -248,7 +251,7 @@ genome_length_mb
 
 Now that R has `genome_length_mb` in memory, we can do arithmetic with it. For
 instance, we may want to convert this to the weight of the genome in
-picograms (for some reason). 978Mb = 1picogram. Divide the
+picograms (for some reason). 978Mb = 1 picogram. Divide the
 genome length in Mb by 978.
 
 #### Solution
