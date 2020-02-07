@@ -99,7 +99,7 @@ out. The last option, pipes, are a fairly recent addition to R. Pipes let you
 take the output of one function and send it directly to the next, which is
 useful when you need to many things to the same data set.  Pipes in R look like
 `%>%` and are made available via the `magrittr` package installed as
-part of `dplyr`.
+part of `dplyr`. When speaking, the %>% is pronounced "then".
 
 ```{r, purl = FALSE}
 metadata %>%
