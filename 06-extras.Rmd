@@ -23,7 +23,7 @@ layout: topic
 # Add-on packages
 ## CRAN
 
-In the last two lessons, we used an add-on package called `dplyr`. R is open source, so anyone can write their own functions for particular tasks. When you want to make these functions available to other people, you can develop them into a package with extra documentation like help pages for each function and a guide on how to put all the functions together in a typical analysis. If your package meets certain requirements, you can submit it to the Comprehensive R Archive Network (CRAN), who will host it and make it available to anyone in the world. CRAN currently has over [13,000 packages](http://cran.mtu.edu/web/packages/index.html)! To get any one of them, use R's built in install.packages function:
+In the last two lessons, we used an add-on package called `dplyr`. R is open source, so anyone can write their own functions for particular tasks. When you want to make these functions available to other people, you can develop them into a package with extra documentation like help pages for each function and a guide on how to put all the functions together in a typical analysis. If your package meets certain requirements, you can submit it to the Comprehensive R Archive Network (CRAN), who will host it and make it available to anyone in the world. CRAN currently has over [15,000 packages](http://cran.mtu.edu/web/packages/index.html)! To get any one of them, use R's built in install.packages function:
 
 
 ```{r, eval = FALSE, purl = FALSE}
@@ -35,7 +35,7 @@ You might get asked to choose a CRAN mirror -- this is basically asking you to c
 
 ## Bioconductor
 
-Besides CRAN, there are other repositories for R packages. [Bioconductor](http://bioconductor.org/) provides packages for analyzing genomic data. They currently have over [1,500 software packages](http://bioconductor.org/packages/release/BiocViews.html#___Software) and 900 Annotation packages. To install a package from Bioconductor, you cannot use install.packages with default options. Instead, Bioconductor submitted their own small package to CRAN with a function to download packages from either Bioconductor or CRAN. 
+Besides CRAN, there are other repositories for R packages. [Bioconductor](http://bioconductor.org/) provides packages for analyzing genomic data. They currently have over [1,800 software packages](http://bioconductor.org/packages/release/BiocViews.html#___Software) and 900 Annotation packages. To install a package from Bioconductor, you cannot use install.packages with default options. Instead, Bioconductor submitted their own small package to CRAN with a function to download packages from either Bioconductor or CRAN. 
 
 ```{r, eval = FALSE, purl = FALSE}
 install.packages("AnnotationDbi") #this should throw an error
