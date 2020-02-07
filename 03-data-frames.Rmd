@@ -64,7 +64,6 @@ ten_letters[c(2, 8:10)]
 
 ```
 
-Quick exercise / formative assessment: Select every other element in `ten_letters`.
 
 What if we were dealing with a much longer vector? We can use the `seq()` function to quickly create sequences of numbers.
 
